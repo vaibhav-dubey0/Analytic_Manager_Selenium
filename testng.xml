@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SuiteName">
+
+    <listeners>
+        <listener class-name="vaibhav.TestListinersClasses.Listiners"/>
+    </listeners>
+
+    <!-- It is interface which is implemented by the class -->
+
+    <test name="TestName">
+        <classes>
+            <class name="vaibhav.AppTest"/>
+        </classes>
+    </test>
+    
+</suite>
