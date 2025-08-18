@@ -1,5 +1,13 @@
-vaibhav\JsonData\JsonReader.class
+vaibhav\All_TestCase\Setting\WatchList\DeleteAttribute.class
 vaibhav\TestListinersClasses\Listiners.class
+vaibhav\All_TestCase\LoginTest\Login.class
+vaibhav\All_TestCase\Setting\WatchList\AddAttribute.class
+vaibhav\All_TestCase\Setting\VideoSource\AddCamera.class
+vaibhav\All_TestCase\Setting\WatchList\UploadPersone.class
+vaibhav\JsonData\JsonReader.class
+vaibhav\All_TestCase\Setting\AnalyticServer\AnalyticServer.class
 vaibhav\AppTest.class
 vaibhav\ExtentReport\ExtentReport.class
 vaibhav\GlobalUseProperty.class
+vaibhav\All_TestCase\Setting\VideoSource\DeleteCamera.class
+vaibhav\All_TestCase\Setting\VideoSource\EditCamera.class

@@ -2,13 +2,14 @@ package vaibhav;
 import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import vaibhav.All_TestCase.LoginTest.Login;
 
 
 @Listeners(vaibhav.TestListinersClasses.Listiners.class)
@@ -34,10 +35,18 @@ public class AppTest {
     }
 
     @Test
-    public void anotherTest(){
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin123");
+    public void loginTestInvalidData() {
+        Login login=new Login(driver);
+        login.testInvalidLogin(driver);
     }
+
+    @Test(dependsOnMethods = "loginTestInvalidData")
+    public void loginTestValidData() {
+
+        Login login=new Login(driver);
+        login.testValidLogin(driver);
+    }
+
 
     @AfterClass
     public void tearDown() {
