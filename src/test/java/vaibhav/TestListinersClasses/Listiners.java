@@ -35,7 +35,7 @@ public class Listiners implements ITestListener {
     }
 
   @Override
-public void onTestFailure(ITestResult result) {
+  public void onTestFailure(ITestResult result) {
     extentTest.get().log(Status.FAIL, "Test Failed");
     extentTest.get().log(Status.FAIL, result.getThrowable());
 

@@ -1,6 +1,7 @@
 package vaibhav;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,36 +11,41 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GlobalUseProperty {
 
-    WebDriver driver;
-
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    protected WebDriver driver;
 
     public GlobalUseProperty(WebDriver driver) {
         this.driver = driver;
     }
 
     public void waitForVisibilityOfElement(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForVisibilityOfElement(By element) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    public void waitForVisibilityOfElement(By locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public void waitUntilVisibilityOfAllElements(List<WebElement> elements) {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.visibilityOfAllElements(elements));
     }
 
     public void waitForElementToBeClickable(By locator) {
-        wait.until(ExpectedConditions.elementToBeClickable(locator));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public void waitForElementToBeClickable(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void waitForElementToBePresent(By locator) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    public void waitForElementToBePresent(WebElement element) {
-        wait.until(ExpectedConditions.presenceOfElementLocated((By) element));
-    }
-
+    // Removed waitForElementToBePresent(WebElement element) as it is not valid
 }

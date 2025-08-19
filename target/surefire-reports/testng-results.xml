@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-12T14:29:22 IST" name="SuiteName" finished-at="2025-08-12T14:29:30 IST" duration-ms="7582">
+  <suite started-at="2025-08-20T02:05:37 IST" name="Suite" finished-at="2025-08-20T02:05:50 IST" duration-ms="13395">
     <groups>
     </groups>
-    <test started-at="2025-08-12T14:29:22 IST" name="TestName" finished-at="2025-08-12T14:29:30 IST" duration-ms="7582">
+    <test started-at="2025-08-20T02:05:37 IST" name="Test" finished-at="2025-08-20T02:05:50 IST" duration-ms="13395">
       <class name="vaibhav.AppTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:vaibhav.AppTest@7188af83]" started-at="2025-08-12T14:29:22 IST" name="setUp" finished-at="2025-08-12T14:29:25 IST" duration-ms="3122" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:vaibhav.AppTest@694abbdc]" started-at="2025-08-20T02:05:37 IST" name="setUp" finished-at="2025-08-20T02:05:42 IST" duration-ms="4728" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginTestInvalidData()[pri:0, instance:vaibhav.AppTest@7188af83]" started-at="2025-08-12T14:29:25 IST" name="loginTestInvalidData" finished-at="2025-08-12T14:29:28 IST" duration-ms="2464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTestInvalidData -->
-        <test-method signature="shouldAnswerWithTrue()[pri:0, instance:vaibhav.AppTest@7188af83]" started-at="2025-08-12T14:29:28 IST" name="shouldAnswerWithTrue" finished-at="2025-08-12T14:29:28 IST" duration-ms="1" status="PASS">
+        <test-method signature="shouldAnswerWithTrue()[pri:0, instance:vaibhav.AppTest@694abbdc]" started-at="2025-08-20T02:05:42 IST" name="shouldAnswerWithTrue" finished-at="2025-08-20T02:05:42 IST" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shouldAnswerWithTrue -->
-        <test-method signature="loginTestValidData()[pri:0, instance:vaibhav.AppTest@7188af83]" started-at="2025-08-12T14:29:28 IST" name="loginTestValidData" finished-at="2025-08-12T14:29:28 IST" depends-on-methods="vaibhav.AppTest.loginTestInvalidData" duration-ms="219" status="PASS">
+        <test-method signature="loginTestInvalidData()[pri:0, instance:vaibhav.AppTest@694abbdc]" started-at="2025-08-20T02:05:42 IST" name="loginTestInvalidData" finished-at="2025-08-20T02:05:43 IST" duration-ms="747" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTestInvalidData -->
+        <test-method signature="loginTestValidData()[pri:0, instance:vaibhav.AppTest@694abbdc]" started-at="2025-08-20T02:05:43 IST" name="loginTestValidData" finished-at="2025-08-20T02:05:43 IST" duration-ms="622" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTestValidData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:vaibhav.AppTest@7188af83]" started-at="2025-08-12T14:29:28 IST" name="tearDown" finished-at="2025-08-12T14:29:30 IST" duration-ms="1721" status="PASS">
+        <test-method signature="deviceFilterTest()[pri:0, instance:vaibhav.AppTest@694abbdc]" started-at="2025-08-20T02:05:43 IST" name="deviceFilterTest" finished-at="2025-08-20T02:05:50 IST" duration-ms="6792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deviceFilterTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:vaibhav.AppTest@694abbdc]" started-at="2025-08-20T02:05:50 IST" name="tearDown" finished-at="2025-08-20T02:05:50 IST" duration-ms="405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- vaibhav.AppTest -->
-    </test> <!-- TestName -->
-  </suite> <!-- SuiteName -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
