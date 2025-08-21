@@ -32,6 +32,12 @@ public class Login {
         this.passwordField.sendKeys(password);
         this.loginButton.click();
 
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GlobalUseProperty {
 
-    protected WebDriver driver;
+    public WebDriver driver;
 
     public GlobalUseProperty(WebDriver driver) {
         this.driver = driver;
@@ -47,5 +47,12 @@ public class GlobalUseProperty {
             .until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    // Removed waitForElementToBePresent(WebElement element) as it is not valid
+    public void normalWait(String time) {
+        try {
+            Thread.sleep(Long.parseLong(time));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
