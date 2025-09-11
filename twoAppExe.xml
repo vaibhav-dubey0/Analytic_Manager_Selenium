@@ -1,0 +1,58 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SuitParallel">
+
+    <listeners>
+        <listener class-name="vaibhav.TestListinersClasses.Listiners"/>
+    </listeners>
+
+    <test name="ParallelClasses" parallel="classes" thread-count="2">
+        <classes>
+            <class name="vaibhav.AppTest">
+                <methods>
+                    <include name="loginTestInvalidData"/>
+                    <include name="loginTestValidData"/>
+                    <include name="deviceFilterTest"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyAgeFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyEmotionFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyEventPerPageFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyGlassesFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyMaskFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyGenderFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyDetectionConfFilter"/>
+                    <include name="applyClearAllFilters"/>
+                </methods>
+            </class>
+
+            <class name="vaibhav.AppTest1">
+                <methods>
+                    <include name="loginTestInvalidData"/>
+                    <include name="loginTestValidData"/>
+                    <include name="deviceFilterTest"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyAgeFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyEmotionFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyEventPerPageFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyGlassesFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyMaskFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyGenderFilter"/>
+                    <include name="applyClearAllFilters"/>
+                    <include name="applyDetectionConfFilter"/>
+                    <include name="applyClearAllFilters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

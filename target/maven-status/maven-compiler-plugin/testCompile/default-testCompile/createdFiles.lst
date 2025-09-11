@@ -4,9 +4,11 @@ vaibhav\ApplyMultiple\demo.class
 vaibhav\TestListinersClasses\Listiners.class
 vaibhav\All_TestCase\LoginTest\Login.class
 vaibhav\Reports_Section\ReportFilter.class
+vaibhav\Sequencrun.class
 vaibhav\All_TestCase\Setting\WatchList\AddAttribute.class
 vaibhav\FlackeyTestHandle\RetryFailedTests.class
 vaibhav\All_TestCase\Setting\VideoSource\AddCamera.class
+vaibhav\AppTest1.class
 vaibhav\ApplyMultiple\ApplyMultipleOnFRS.class
 vaibhav\All_TestCase\Setting\WatchList\UploadPersone.class
 vaibhav\All_TestCase\Setting\AnalyticServer\AnalyticServer.class

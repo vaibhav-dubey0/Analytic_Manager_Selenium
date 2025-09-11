@@ -1,0 +1,287 @@
+<html>
+<head>
+<title>TestNG:  ParallelClasses</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>ParallelClasses</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>22/0/1</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Aug 24 01:23:39 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>24 seconds (24452 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='vaibhav.AppTest.applyAgeFilter()'><b>applyAgeFilter</b><br>Test class: vaibhav.AppTest<br>Parameters: {InvalidUser=admin, password=Admin@12345, detection=.5, InvalidPassword=Admin@123, age=11, username=admin}</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.loginTestValidData()'><b>loginTestValidData</b><br>Test class: vaibhav.AppTest1<br>Parameters: {InvalidUser=user2, password=Admin@12345, detection=.7, InvalidPassword=pass2, age=12, username=admin1}</td>
+<td></td>
+<td>2</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyGlassesFilter()'><b>applyGlassesFilter</b><br>Test class: vaibhav.AppTest1</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.loginTestInvalidData()'><b>loginTestInvalidData</b><br>Test class: vaibhav.AppTest1<br>Parameters: {InvalidUser=user2, password=Admin@12345, detection=.7, InvalidPassword=pass2, age=12, username=admin1}</td>
+<td></td>
+<td>2</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest.loginTestValidData()'><b>loginTestValidData</b><br>Test class: vaibhav.AppTest<br>Parameters: {InvalidUser=admin, password=Admin@12345, detection=.5, InvalidPassword=Admin@123, age=11, username=admin}</td>
+<td></td>
+<td>2</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyEventPerPageFilter()'><b>applyEventPerPageFilter</b><br>Test class: vaibhav.AppTest</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest.loginTestInvalidData()'><b>loginTestInvalidData</b><br>Test class: vaibhav.AppTest<br>Parameters: {InvalidUser=admin, password=Admin@12345, detection=.5, InvalidPassword=Admin@123, age=11, username=admin}</td>
+<td></td>
+<td>2</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyEmotionFilter()'><b>applyEmotionFilter</b><br>Test class: vaibhav.AppTest</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyMaskFilter()'><b>applyMaskFilter</b><br>Test class: vaibhav.AppTest1</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyDetectionConfFilter()'><b>applyDetectionConfFilter</b><br>Test class: vaibhav.AppTest<br>Parameters: {InvalidUser=admin, password=Admin@12345, detection=.5, InvalidPassword=Admin@123, age=11, username=admin}</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyClearAllFilters()'><b>applyClearAllFilters</b><br>Test class: vaibhav.AppTest</td>
+<td></td>
+<td>0</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyDetectionConfFilter()'><b>applyDetectionConfFilter</b><br>Test class: vaibhav.AppTest1<br>Parameters: {InvalidUser=user2, password=Admin@12345, detection=.7, InvalidPassword=pass2, age=12, username=admin1}</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest.deviceFilterTest()'><b>deviceFilterTest</b><br>Test class: vaibhav.AppTest<br>Parameters: {InvalidUser=admin, password=Admin@12345, detection=.5, InvalidPassword=Admin@123, age=11, username=admin}</td>
+<td></td>
+<td>2</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyGenderFilter()'><b>applyGenderFilter</b><br>Test class: vaibhav.AppTest1</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.deviceFilterTest()'><b>deviceFilterTest</b><br>Test class: vaibhav.AppTest1<br>Parameters: {InvalidUser=user2, password=Admin@12345, detection=.7, InvalidPassword=pass2, age=12, username=admin1}</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyEventPerPageFilter()'><b>applyEventPerPageFilter</b><br>Test class: vaibhav.AppTest1</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyEmotionFilter()'><b>applyEmotionFilter</b><br>Test class: vaibhav.AppTest1</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyGlassesFilter()'><b>applyGlassesFilter</b><br>Test class: vaibhav.AppTest</td>
+<td></td>
+<td>2</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyAgeFilter()'><b>applyAgeFilter</b><br>Test class: vaibhav.AppTest1<br>Parameters: {InvalidUser=user2, password=Admin@12345, detection=.7, InvalidPassword=pass2, age=12, username=admin1}</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyMaskFilter()'><b>applyMaskFilter</b><br>Test class: vaibhav.AppTest</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+<tr>
+<td title='vaibhav.AppTest1.applyClearAllFilters()'><b>applyClearAllFilters</b><br>Test class: vaibhav.AppTest1</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+<tr>
+<td title='vaibhav.AppTest.applyGenderFilter()'><b>applyGenderFilter</b><br>Test class: vaibhav.AppTest</td>
+<td></td>
+<td>1</td>
+<td>vaibhav.AppTest@52f27fbd</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='vaibhav.AppTest1.deviceFilterTest()'><b>deviceFilterTest</b><br>Test class: vaibhav.AppTest1<br>Parameters: {InvalidUser=user2, password=Admin@12345, detection=.7, InvalidPassword=pass2, age=12, username=admin1}</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=139.0.7258.139)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7205c8ddf47420d9f6dddd35e8ab7e91, isElementDisplayed {id=f.22451739E80C0462A75389EDA46BB81C.d.2F05155547EB3BB7A3B29F2847DEA541.e.78}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.139, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Users\vaibh\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49835/devtoo..., se:cdpVersion: 139.0.7258.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7205c8ddf47420d9f6dddd35e8ab7e91)] -&gt; xpath: //div[@class=&apos;right&apos;]/button[1]]
+Session ID: 7205c8ddf47420d9f6dddd35e8ab7e91
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at vaibhav.GlobalUseProperty.waitForVisibilityOfElement(GlobalUseProperty.java:22)
+	at vaibhav.Reports_Section.ReportFilter.filter(ReportFilter.java:73)
+	at vaibhav.AppTest1.deviceFilterTest(AppTest1.java:56)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1893781451", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1893781451'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=139.0.7258.139)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.6&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7205c8ddf47420d9f6dddd35e8ab7e91, isElementDisplayed {id=f.22451739E80C0462A75389EDA46BB81C.d.2F05155547EB3BB7A3B29F2847DEA541.e.78}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.139, chrome: {chromedriverVersion: 139.0.7258.138 (884e54ea8d4..., userDataDir: C:\Users\vaibh\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49835/devtoo..., se:cdpVersion: 139.0.7258.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (7205c8ddf47420d9f6dddd35e8ab7e91)] -&gt; xpath: //div[@class=&apos;right&apos;]/button[1]]
+Session ID: 7205c8ddf47420d9f6dddd35e8ab7e91
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at vaibhav.GlobalUseProperty.waitForVisibilityOfElement(GlobalUseProperty.java:22)
+	at vaibhav.Reports_Section.ReportFilter.filter(ReportFilter.java:73)
+	at vaibhav.AppTest1.deviceFilterTest(AppTest1.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>vaibhav.AppTest1@70cf32e3</td></tr>
+</table><p>
+</body>
+</html>

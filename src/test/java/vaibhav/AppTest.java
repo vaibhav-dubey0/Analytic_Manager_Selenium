@@ -8,25 +8,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Factory;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-import vaibhav.All_TestCase.LoginTest.Login;
+import vaibhav.DataDrivenTestCase.JsonDataReader;
 import vaibhav.FlackeyTestHandle.RetryFailedTests;
-import vaibhav.JsonData.JsonDataReader;
-import vaibhav.Reports_Section.ReportFilter;
+import vaibhav.All_TestCase.LoginTest.Login;
+import vaibhav.All_TestCase.Reports_Section.ReportFilter;
 
 @Listeners(vaibhav.TestListinersClasses.Listiners.class)
 public class AppTest {
 
     private WebDriver driver;
-    private HashMap<String, Object> testData;
-
-    // Constructor for @Factory
-    public AppTest(HashMap<String, Object> data) {
-        this.testData = data;
-    }
+     private SoftAssert softAssert;
 
     @BeforeClass
     public void setUp() {
@@ -34,26 +30,30 @@ public class AppTest {
         driver.get("http://localhost:5012/login");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        softAssert = new SoftAssert();
     }
 
-    @Test
-    public void loginTestInvalidData() {
+  
+   
+ 
+    @Test(dataProvider = "jsonDataProvider")
+    public void loginTestInvalidData(HashMap<String, Object> testData) {
         String userName = (String) testData.get("InvalidUser");
         String password = (String) testData.get("InvalidPassword");
         Login login = new Login(driver);
         login.loginMethod(userName, password);
     }
 
-    @Test
-    public void loginTestValidData() {
+    @Test(dataProvider = "jsonDataProvider")
+    public void loginTestValidData(HashMap<String, Object> testData) {
         String userName = (String) testData.get("username");
         String password = (String) testData.get("password");
         Login login = new Login(driver);
         login.loginMethod(userName, password);
     }
 
-    @Test(alwaysRun = true, retryAnalyzer = RetryFailedTests.class)
-    public void deviceFilterTest() {
+    @Test(alwaysRun = true, retryAnalyzer = RetryFailedTests.class, dataProvider = "jsonDataProvider")
+    public void deviceFilterTest(HashMap<String, Object> testData) {
         ReportFilter filter = new ReportFilter(driver);
         String filterName = "Device";
         filter.filter(filterName);
@@ -61,8 +61,8 @@ public class AppTest {
         filter.applyFilters();
     }
 
-    @Test(alwaysRun = true, retryAnalyzer = RetryFailedTests.class)
-    public void applyAgeFilter() {
+    @Test(alwaysRun = true, retryAnalyzer = RetryFailedTests.class, dataProvider = "jsonDataProvider")
+    public void applyAgeFilter(HashMap<String, Object> testData) {
         ReportFilter filter = new ReportFilter(driver);
         String filterName = "Age";
         filter.filter(filterName);
@@ -70,8 +70,8 @@ public class AppTest {
         filter.applyFilters();
     }
 
-    @Test(alwaysRun = true)
-    public void applyDetectionConfFilter() {
+    @Test(alwaysRun = true, dataProvider = "jsonDataProvider")
+    public void applyDetectionConfFilter(HashMap<String, Object> testData) {
         ReportFilter filter = new ReportFilter(driver);
         String filterName = "Det conf";
         String detectionConf = (String) testData.get("detection");
@@ -80,6 +80,7 @@ public class AppTest {
         filter.applyFilters();
     }
 
+    
     @Test(alwaysRun = true)
     public void applyGenderFilter() {
         ReportFilter filter = new ReportFilter(driver);
@@ -136,19 +137,21 @@ public class AppTest {
         if (driver != null) {
             driver.quit();
         }
+        softAssert.assertAll();
     }
 
-    // Factory to create one AppTest instance per JSON object
-    @Factory
-    public static Object[] createInstances() {
-        String jsonFilePath = System.getProperty("user.dir") + "\\src\\test\\java\\vaibhav\\JsonData\\data.json";
+
+     @DataProvider(name = "jsonDataProvider")
+    public Object[][] getData() {
+        String jsonFilePath = System.getProperty("user.dir") + "\\src\\test\\java\\vaibhav\\JsonData\\data2.json";
         JsonDataReader jsonReader = new JsonDataReader();
         List<HashMap<String, Object>> jsonData = jsonReader.readData(jsonFilePath);
 
-        Object[] instances = new Object[jsonData.size()];
+        Object[][] data = new Object[jsonData.size()][1];
         for (int i = 0; i < jsonData.size(); i++) {
-            instances[i] = new AppTest(jsonData.get(i));
+            data[i][0] = jsonData.get(i);
         }
-        return instances;
+        return data;
     }
+
 }
